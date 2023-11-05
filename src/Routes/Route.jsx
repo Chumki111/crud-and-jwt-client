@@ -7,6 +7,7 @@ import ErrorPage from "../Pages/Error/ErrorPage";
 import MyServices from "../Pages/MyServices/MyServices";
 import AddServices from "../Pages/AddSercices/AddServices";
 import MySchedules from "../Pages/MySchedules/MySchedules";
+import Register from "../Pages/Log/Register";
 
 
 
@@ -28,6 +29,10 @@ const Route = createBrowserRouter([
         {
             path: '/login',
             element:<Login></Login>
+        },
+        {
+            path:'/register',
+            element:<Register></Register>
         },
         {
             path:'/myServices',

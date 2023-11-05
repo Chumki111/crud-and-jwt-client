@@ -9,6 +9,7 @@ const Nav = () => {
         {/* <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" /> */}
         <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white font-fontPoppins">Offline Services</span>
       </Navbar.Brand>
+      <Navbar.Toggle />
       <Navbar.Collapse>
         <NavLink
           to="/"
@@ -35,6 +36,7 @@ const Nav = () => {
           Login
         </NavLink>
 
+       
         <div className="flex md:order-2">
           <Dropdown
             arrowIcon={false}
@@ -49,9 +51,8 @@ const Nav = () => {
 
             <Dropdown.Item><Link to='/mySchedules'>My Schedules</Link></Dropdown.Item>
           </Dropdown>
-          <Navbar.Toggle />
+          
         </div>
-
 
 
 
