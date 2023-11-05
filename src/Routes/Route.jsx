@@ -4,6 +4,10 @@ import Home from "../Pages/Home/Home";
 import Services from "../Pages/Services/Services";
 import Login from "../Pages/Log/Login";
 import ErrorPage from "../Pages/Error/ErrorPage";
+import MyServices from "../Pages/MyServices/MyServices";
+import AddServices from "../Pages/AddSercices/AddServices";
+import MySchedules from "../Pages/MySchedules/MySchedules";
+
 
 
 const Route = createBrowserRouter([
@@ -24,11 +28,24 @@ const Route = createBrowserRouter([
         {
             path: '/login',
             element:<Login></Login>
+        },
+        {
+            path:'/myServices',
+            element:<MyServices></MyServices>
+        },
+        {
+            path:'/addServices',
+            element:<AddServices></AddServices>
+        },
+        {
+            path:'/mySchedules',
+            element:<MySchedules></MySchedules>
         }
     ]
 
     
-    }
+    },
+
 ])
 
 
