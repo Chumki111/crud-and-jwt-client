@@ -7,7 +7,7 @@ const Nav = () => {
       {/* <Navbar.Brand as={Link} href="https://flowbite-react.com"> */}
       <Navbar.Brand as={Link} href="">
         {/* <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" /> */}
-        <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">Offline Services</span>
+        <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white font-fontPoppins">Offline Services</span>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
