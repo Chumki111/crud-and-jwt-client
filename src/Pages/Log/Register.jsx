@@ -7,6 +7,7 @@ import { MdPhotoCamera} from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthProvider } from '../../Context/UserContext';
+import Swal from 'sweetalert2';
 
 
 const Register = () => {
@@ -21,13 +22,40 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name,photo,email,password);
+
+
+          // validation
+          if (!/^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{6,}$/.test(password)) {
+            
+            Swal.fire({
+                title: 'Error!',
+                text: 'at least 6 characters,one uppercase and a special letter',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+            return;
+        }
      
         createUser(email,password)
         .then(result =>{
             console.log(result.user);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Created an account successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+              form.reset()
         })
         .catch(error =>{
             console.log(error);
+            Swal.fire({
+                title: 'Error!',
+                text: 'Email already in use',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+              form.reset()
         })
 
     }

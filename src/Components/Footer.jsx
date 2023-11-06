@@ -1,6 +1,7 @@
 'use client';
 import { Footer } from 'flowbite-react';
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
+import img from '../assets/branding.avif'
 
 const Foot = () => {
     return (
@@ -9,10 +10,12 @@ const Foot = () => {
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Footer.Brand
-              href="https://flowbite.com"
-              src="https://flowbite.com/docs/images/logo.svg"
+            className=''
+              href="/"
+              src={img}
               alt="Flowbite Logo"
-              name="Flowbite"
+              name="Offline Services"
+              
             />
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">

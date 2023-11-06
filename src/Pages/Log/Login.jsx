@@ -1,4 +1,3 @@
-
 'use client';
 import {  Label, TextInput, } from 'flowbite-react';
 import { HiMail } from 'react-icons/hi';
@@ -7,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { FaEye,FaEyeSlash } from 'react-icons/fa';
 import { useContext, useState } from 'react';
 import { AuthProvider } from '../../Context/UserContext';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
@@ -23,13 +23,28 @@ const Login = () => {
         signInUser(email,password)
         .then(result =>{
             console.log(result.user);
+            Swal.fire({
+                title: 'Success!',
+                text: 'login successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+              form.reset()
         })
         .catch(error =>{
             console.log(error);
+            Swal.fire({
+                title: 'Error!',
+                text: 'email and password does not match with register email and password',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+              form.reset();
+              
         })
     }
 
-   const handleGoogle =() =>{
+   const handleGoogle =()=>{
     googleSignIn()
     .then(result =>{
         console.log(result.user);
