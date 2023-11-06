@@ -2,13 +2,17 @@
 import {  Label, TextInput, } from 'flowbite-react';
 import { HiMail } from 'react-icons/hi';
 import { FaEye,FaEyeSlash } from 'react-icons/fa';
-import { FcGoogle,FcBusinessman} from 'react-icons/fc';
+import {FcBusinessman} from 'react-icons/fc';
 import { MdPhotoCamera} from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthProvider } from '../../Context/UserContext';
+
 
 const Register = () => {
-    const [showPassword,setShowPassword] = useState(false)
+    const [showPassword,setShowPassword] = useState(false);
+    const {createUser} = useContext(AuthProvider)
+   
     const handleRegister = e =>{
         e.preventDefault();
         const form = e.target;
@@ -17,7 +21,17 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name,photo,email,password);
+     
+        createUser(email,password)
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+
     }
+   
     return (
         <div className='mt-10 flex justify-center items-center'>
            
@@ -60,16 +74,7 @@ const Register = () => {
                 </div>
                 
             </div>
-            <div className="max-w-md mx-auto">
-            <div className="mb-2 mt-7 block">
-            <h1 className='text-center text-lg font-medium mt-4 mb-3'>Or Sign In With</h1>
            
-            </div>
-            <button type='' className='w-full btn justify-center items-center flex py-3 text-white bg-black rounded-md'>
-                Continue With Google <FcGoogle className="text-2xl ml-3"></FcGoogle></button>
-                
-                
-            </div>
             <p className=" text-base text-center my-5">Already Have An Account ? <Link to='/login' className=""><button className=" btn-link underline">Sign In</button></Link></p>
             </form>
           

@@ -5,11 +5,13 @@ import { HiMail } from 'react-icons/hi';
 import { FcGoogle} from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { FaEye,FaEyeSlash } from 'react-icons/fa';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthProvider } from '../../Context/UserContext';
 
 
 const Login = () => {
-    const [showPassword,setShowPassword] = useState(false)
+    const [showPassword,setShowPassword] = useState(false);
+    const {googleSignIn,signInUser} = useContext(AuthProvider);
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -17,7 +19,25 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password);
+
+        signInUser(email,password)
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            console.log(error);
+        })
     }
+
+   const handleGoogle =() =>{
+    googleSignIn()
+    .then(result =>{
+        console.log(result.user);
+    })
+    .catch(error =>{
+        console.log(error);
+    })
+   }
     return (
         <div className='mt-10 flex justify-center items-center'>
            
@@ -53,7 +73,7 @@ const Login = () => {
                         <h1 className='text-center text-lg font-medium mt-4'>Or Sign In With</h1>
                        
                         </div>
-                        <button type='' className='w-full btn justify-center items-center flex py-3 text-white bg-black rounded-md'>
+                        <button onClick={handleGoogle} type='' className='w-full btn justify-center items-center flex py-3 text-white bg-black rounded-md'>
                             Continue With Google <FcGoogle className="text-2xl ml-3"></FcGoogle></button>
                             
                             
