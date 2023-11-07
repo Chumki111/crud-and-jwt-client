@@ -22,7 +22,7 @@ const Nav = () => {
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
+              isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
             }
           >
             Home
@@ -30,7 +30,7 @@ const Nav = () => {
           <NavLink
             to="/services"
             className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
+              isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
             }
           >
             Services
@@ -39,15 +39,18 @@ const Nav = () => {
           <NavLink
             to="/" onClick={logOut}
             className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
+              isPending ? "pending" : isActive ? "" : ""
             }
           >
             Logout
-          </NavLink>
+          </NavLink >
           <div className="flex md:order-2">
-            <Dropdown
+          
+            
+           <Dropdown
               arrowIcon={false}
               inline
+             
               label={
                 'Dashboard'
 
@@ -58,6 +61,7 @@ const Nav = () => {
 
               <Dropdown.Item><Link to='/mySchedules'>My Schedules</Link></Dropdown.Item>
             </Dropdown>
+          
 
           </div>
         </Navbar.Collapse>
@@ -67,7 +71,7 @@ const Nav = () => {
             <NavLink
               to="/"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
               }
             >
               Home
@@ -75,7 +79,7 @@ const Nav = () => {
             <NavLink
               to="/services"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
               }
             >
               Services
@@ -83,7 +87,7 @@ const Nav = () => {
             <NavLink
               to="/login"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
               }
             >
               Login
