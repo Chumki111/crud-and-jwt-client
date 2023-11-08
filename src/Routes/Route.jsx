@@ -12,6 +12,7 @@ import SingleService from "../Pages/Services/SingleService";
 
 
 
+
 const Route = createBrowserRouter([
     {
         path: "/",
@@ -28,10 +29,10 @@ const Route = createBrowserRouter([
             loader:() => fetch('http://localhost:5000/services')
 
         },
-        {
-            path :'/service/:_id',
-            element:<SingleService></SingleService>,
-            loader:({params}) => fetch(`http://localhost:5000/services/${params._id}`)
+       {
+                path:'/service/:_id',
+                element:<SingleService></SingleService>,
+                loader:({ params }) => fetch(`http://localhost:5000/services/${params._id}`)
        },
         {
             path: '/login',
