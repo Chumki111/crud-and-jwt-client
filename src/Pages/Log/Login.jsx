@@ -2,7 +2,7 @@
 import {  Label, TextInput, } from 'flowbite-react';
 import { HiMail } from 'react-icons/hi';
 import { FcGoogle} from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye,FaEyeSlash } from 'react-icons/fa';
 import { useContext, useState } from 'react';
 import { AuthProvider } from '../../Context/UserContext';
@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 const Login = () => {
     const [showPassword,setShowPassword] = useState(false);
     const {googleSignIn,signInUser} = useContext(AuthProvider);
+    const location =useLocation();
+    const navigate = useNavigate()
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -29,7 +31,8 @@ const Login = () => {
                 icon: 'success',
                 confirmButtonText: 'Cool'
               })
-              form.reset()
+              form.reset();
+              navigate(location?.state ? location.state : '/')
         })
         .catch(error =>{
             console.log(error);
@@ -48,6 +51,7 @@ const Login = () => {
     googleSignIn()
     .then(result =>{
         console.log(result.user);
+        navigate(location?.state ? location.state : '/')
     })
     .catch(error =>{
         console.log(error);

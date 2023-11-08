@@ -4,15 +4,17 @@ import { HiMail } from 'react-icons/hi';
 import { FaEye,FaEyeSlash } from 'react-icons/fa';
 import {FcBusinessman} from 'react-icons/fc';
 import { MdPhotoCamera} from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthProvider } from '../../Context/UserContext';
 import Swal from 'sweetalert2';
+import { updateProfile } from 'firebase/auth';
 
 
 const Register = () => {
     const [showPassword,setShowPassword] = useState(false);
-    const {createUser} = useContext(AuthProvider)
+    const {createUser} = useContext(AuthProvider);
+    const navigate = useNavigate()
    
     const handleRegister = e =>{
         e.preventDefault();
@@ -45,7 +47,15 @@ const Register = () => {
                 icon: 'success',
                 confirmButtonText: 'Cool'
               })
-              form.reset()
+              form.reset();
+              navigate('/');
+            // update Profile
+              updateProfile(result.user,{
+                displayName : name,
+                photoURL : photo,
+            })
+            .then()
+            .catch()
         })
         .catch(error =>{
             console.log(error);

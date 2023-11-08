@@ -4,8 +4,10 @@ import { Button, Modal, TextInput, Textarea, } from 'flowbite-react';
 import { useContext, useState } from 'react';
 import { AuthProvider } from '../../Context/UserContext';
 import Swal from 'sweetalert2';
+import PropTypes from 'prop-types';
 
 const BookServices = ({serviceName,serviceImage,servicePrice,providerEmail}) => {
+    
 
    const {user} = useContext(AuthProvider)
 
@@ -26,7 +28,7 @@ const BookServices = ({serviceName,serviceImage,servicePrice,providerEmail}) => 
         const price=form.price.value;
         const userEmail=user?.email;
         const message = form.textarea.value;
-        console.log(serviceName,providerEmail,date,userEmail,photo,message,price);
+        
 
 
 
@@ -53,7 +55,7 @@ const BookServices = ({serviceName,serviceImage,servicePrice,providerEmail}) => 
                 if(data.insertedId){
                     Swal.fire(
                         'Good job!',
-                        'Your order add!',
+                        'Your booking successfully!',
                         'success'
                       )
                 }
@@ -137,5 +139,16 @@ const BookServices = ({serviceName,serviceImage,servicePrice,providerEmail}) => 
         </div>
     );
 };
-
+BookServices.propTypes ={
+    serviceImage:PropTypes.string
+}
+BookServices.propTypes ={
+    serviceName:PropTypes.string
+}
+BookServices.propTypes ={
+    servicePrice:PropTypes.string
+}
+BookServices.propTypes ={
+    providerEmail:PropTypes.string
+}
 export default BookServices;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 const AllServices = ({service}) => {
     const {_id,serviceImage,serviceName,serviceDescription,providerImage,providerName,servicePrice,location} = service
-    console.log(typeof(_id));
+    
     return (
         <div>
             <Card

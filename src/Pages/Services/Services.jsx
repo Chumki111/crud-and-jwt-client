@@ -9,7 +9,7 @@ const Services = () => {
 
 
     const services = useLoaderData();
-    console.log(services);
+    
     return (
         <div className="mt-14">
             <TypeWriter></TypeWriter>

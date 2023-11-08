@@ -48,6 +48,7 @@ const Nav = () => {
           
             
            <Dropdown
+           className="px-4"
               arrowIcon={false}
               inline
              
@@ -56,7 +57,7 @@ const Nav = () => {
 
               }
             >
-              <Dropdown.Item><Link to='/myServices'>My Services</Link></Dropdown.Item>
+              <Dropdown.Item className="px-3"><Link to='/myServices'>My Services</Link></Dropdown.Item>
               <Dropdown.Item><Link to='/AddServices'>Add Services</Link></Dropdown.Item>
 
               <Dropdown.Item><Link to='/mySchedules'>My Schedules</Link></Dropdown.Item>

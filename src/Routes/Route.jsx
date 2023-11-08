@@ -9,6 +9,7 @@ import AddServices from "../Pages/AddSercices/AddServices";
 import MySchedules from "../Pages/MySchedules/MySchedules";
 import Register from "../Pages/Log/Register";
 import SingleService from "../Pages/Services/SingleService";
+import PrivetRoute from "./PrivetRoute";
 
 
 
@@ -31,7 +32,7 @@ const Route = createBrowserRouter([
         },
        {
                 path:'/service/:_id',
-                element:<SingleService></SingleService>,
+                element:<PrivetRoute><SingleService></SingleService></PrivetRoute>,
                 loader:({ params }) => fetch(`http://localhost:5000/services/${params._id}`)
        },
         {
@@ -48,7 +49,7 @@ const Route = createBrowserRouter([
         },
         {
             path:'/addServices',
-            element:<AddServices></AddServices>
+            element:<PrivetRoute><AddServices></AddServices></PrivetRoute>
         },
         {
             path:'/mySchedules',
