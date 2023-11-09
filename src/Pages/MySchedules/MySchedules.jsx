@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 const MySchedules = () => {
     const {user} = useContext(AuthProvider)
     const [bookings,setBookings] = useState([])
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `https://offline-service-sharing-server-gold.vercel.app/bookings?email=${user?.email}`
     useEffect(()=>{{
        
         fetch(url)
@@ -23,7 +23,7 @@ const MySchedules = () => {
     console.log(bookings);
 
     const handleCompleted= id =>{
-        fetch(`http://localhost:5000/bookings/${id}`,{
+        fetch(`https://offline-service-sharing-server-gold.vercel.app/bookings/${id}`,{
             method:'PATCH',
             headers:{
              'content-type':'application/json'

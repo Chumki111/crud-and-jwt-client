@@ -7,7 +7,7 @@ const MyServices = () => {
 
     const {user} = useContext(AuthProvider)
     const [myServices,setMyServices] = useState([])
-    const url = `http://localhost:5000/addServices?email=${user?.email}`
+    const url = `https://offline-service-sharing-server-gold.vercel.app/addServices?email=${user?.email}`
     useEffect(()=>{{
        
         fetch(url)

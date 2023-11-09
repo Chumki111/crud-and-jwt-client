@@ -29,19 +29,19 @@ const Route = createBrowserRouter([
         { 
             path:'/details/:_id',
             element:<PrivetRoute><Details></Details></PrivetRoute>,
-            loader: ({ params }) => fetch(`http://localhost:5000/popularServices/${params._id}`)
+            loader: ({ params }) => fetch(`https://offline-service-sharing-server-gold.vercel.app/popularServices/${params._id}`)
 
         },
         {
             path:'/services',
             element:<Services></Services>,
-            loader:() => fetch('http://localhost:5000/services')
+            loader:() => fetch('https://offline-service-sharing-server-gold.vercel.app/services')
 
         },
        {
                 path:'/service/:_id',
                 element:<PrivetRoute><SingleService></SingleService></PrivetRoute>,
-                loader:({ params }) => fetch(`http://localhost:5000/services/${params._id}`)
+                loader:({ params }) => fetch(`https://offline-service-sharing-server-gold.vercel.app/services/${params._id}`)
        },
         {
             path: '/login',
@@ -58,7 +58,7 @@ const Route = createBrowserRouter([
         {
           path :'/update/:_id',
           element:<PrivetRoute><UpdateService></UpdateService></PrivetRoute>,
-          loader:({params}) => fetch(`http://localhost:5000/addServices/${params._id}`)
+          loader:({params}) => fetch(`https://offline-service-sharing-server-gold.vercel.app/addServices/${params._id}`)
         },
         {
             path:'/addServices',

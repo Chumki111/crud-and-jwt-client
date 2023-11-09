@@ -37,7 +37,7 @@ const AddServices = () => {
             serviceLocation:serviceLocation
             }
 
-            fetch('http://localhost:5000/addServices',{
+            fetch('https://offline-service-sharing-server-gold.vercel.app/addServices',{
                 method:'POST',
                 headers:{
                     'content-type' :'application/json'

@@ -20,7 +20,7 @@ const MyServiceCard = ({myService,myServices,setMyServices}) => {
            }).then((result) => {
              if (result.isConfirmed) {
        
-               fetch(`http://localhost:5000/addServices/${id}`, {
+               fetch(`https://offline-service-sharing-server-gold.vercel.app/addServices/${id}`, {
                  method: 'DELETE'
                })
                  .then(res => res.json())

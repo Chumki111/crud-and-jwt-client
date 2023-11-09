@@ -16,7 +16,7 @@ const PopularServices = () => {
       const [loadedData,setLoadedData] = useState([]);
 
       useEffect(() =>{
-        fetch('http://localhost:5000/popularServices')
+        fetch('https://offline-service-sharing-server-gold.vercel.app/popularServices')
         .then(res =>res.json())
         .then(data =>{
             setLoadedData(data);
