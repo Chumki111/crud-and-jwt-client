@@ -18,20 +18,20 @@ const Faq = () => {
         <Accordion.Content>
           <p className="mb-2 text-gray-500 dark:text-gray-400">
           there are different service ywe provide, such as 
-          <ul>
-            <li>
-            plumbing
-            </li>
-            <li>
-            electrical work
-            </li>
-            <li>
-            cleaning
-            </li>
-            <li>
+          
+            
+            plumbing,
+          
+            
+            electrical work,
+           
+           
+            cleaning,
+          
+         
             landscaping
-            </li>
-          </ul>
+          
+          
           </p>
           
         </Accordion.Content>
