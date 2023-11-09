@@ -10,6 +10,7 @@ import MySchedules from "../Pages/MySchedules/MySchedules";
 import Register from "../Pages/Log/Register";
 import SingleService from "../Pages/Services/SingleService";
 import PrivetRoute from "./PrivetRoute";
+import UpdateService from "../Pages/MyServices/UpdateService";
 
 
 
@@ -46,6 +47,11 @@ const Route = createBrowserRouter([
         {
             path:'/myServices',
             element:<MyServices></MyServices>
+        },
+        {
+          path :'/update/:_id',
+          element:<UpdateService></UpdateService>,
+          loader:({params}) => fetch(`http://localhost:5000/addServices/${params._id}`)
         },
         {
             path:'/addServices',

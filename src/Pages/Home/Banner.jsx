@@ -6,22 +6,17 @@ import 'swiper/css/navigation';
 import './Banner.css'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-// import img1 from '../../assets/medium.avif';
-import img2 from '../../assets/240.jpg'
-
-
-
 const Banner = () => {
   const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty('--progress', 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  };
+    const progressContent = useRef(null);
+    const onAutoplayTimeLeft = (s, time, progress) => {
+      progressCircle.current.style.setProperty('--progress', 1 - progress);
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    };
    
     return (
 
-      <div className='h-[100%] lg:h-[700px]'>
+      <div className='h-[100%] lg:h-[600px]'>
       <Swiper
  spaceBetween={30}
  centeredSlides={true}
@@ -35,13 +30,13 @@ const Banner = () => {
  navigation={true}
  modules={[Autoplay, Pagination, Navigation]}
  onAutoplayTimeLeft={onAutoplayTimeLeft}
- className="h-[100%] lg:h-[700px]"
+ className="h-[100%] lg:h-[600px]"
 >
  <SwiperSlide className=''>
      <div className='relative'>
-         <img className='rounded-lg' src='https://i.ibb.co/g4qK0RM/3.jpg' alt="" />
-         <div className='absolute top-0 left-0 w-full rounded-lg h-[50%] '>
-             <img src={img2} alt="" />
+         <img className='rounded-lg' src="https://i.ibb.co/cgQRGM2/1.jpg" alt="" />
+         <div className='absolute top-0 left-0 w-full rounded-lg h-full '>
+             <img src="https://i.ibb.co/8KWWTPN/5.jpg" alt="" />
             </div>
          <div className='absolute top-[30%] left-[2rem] md:left-[3rem] lg:left-[8rem] text-white space-y-8 pr-10 text-start'>
             <h1 className='text-4xl lg:text-5xl max-w-md font-bold  leading-[60px]'>Affordable <br /> Price For Car Servicing</h1>
@@ -53,7 +48,7 @@ const Banner = () => {
          </div>
      </div>
  </SwiperSlide>
- 
+
  <SwiperSlide>
      <div className='relative'>
          <img className='rounded-lg' src="https://i.ibb.co/g4qK0RM/3.jpg" alt="" />
