@@ -97,7 +97,7 @@ const BookServices = ({serviceName,serviceImage,servicePrice,providerEmail}) => 
                                     <label className="label">
                                         <span className="label-text"> User Email</span>
                                     </label>
-                                    <TextInput type="email" name='userEmail' placeholder="User Email" className="input input-bordered py-8" defaultValue={user.email} required />
+                                    <TextInput type="email" name='userEmail' placeholder="User Email" className="input input-bordered py-8" defaultValue={user?.email} required />
                                     
                                 </div>
                                 <div className="form-control">

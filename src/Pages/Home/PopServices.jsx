@@ -1,9 +1,10 @@
 'use client';
 import { Card} from 'flowbite-react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const PopServices = ({serviceData}) => {
-   const{serviceImage,serviceName,serviceDescription,providerImage,providerName,servicePrice} = serviceData;
+   const{_id,serviceImage,serviceName,serviceDescription,providerImage,providerName,servicePrice} = serviceData;
     return (
         <div>
             <Card
@@ -46,12 +47,12 @@ const PopServices = ({serviceData}) => {
       </div>
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">${servicePrice}</span>
-        <button
+        <Link to={`/details/${_id}`}><button
           
           className="rounded-lg btn bg-[#FF3811] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#FF3811] focus:outline-none focus:ring-4 focus:ring-[#FF3811] dark:bg-[#FF3811] dark:hover:bg-[#FF3811] dark:focus:ring-[#FF3811]"
         >
           View Details
-        </button>
+        </button></Link>
       </div>
     </Card>
 

@@ -1,13 +1,14 @@
-import {useLoaderData } from "react-router-dom";
-import ServiceProvider from "./ServiceProvider";
+import { useLoaderData } from "react-router-dom";
+import ServiceProvider from "../Services/ServiceProvider";
+import BookServices from "../Services/BookServices";
 import { Card } from "flowbite-react";
 import { useTypewriter } from 'react-simple-typewriter'
-import BookServices from "./BookServices";
 
 
-const SingleService = () => {
-    const singleService = useLoaderData();
-    const { serviceImage, serviceName, serviceDescription, providerImage, providerName, servicePrice, location ,providerEmail} = singleService
+const Details = () => {
+    const loadData = useLoaderData();
+    console.log(loadData);
+    const { serviceImage, serviceName, serviceDescription, providerImage, providerName, servicePrice, location ,providerEmail} = loadData;
 
     const [text] = useTypewriter({
         /* Config */
@@ -16,10 +17,9 @@ const SingleService = () => {
         typeSpeed:100,
         deleteSpeed:40
 })
- 
     return (
-        <div className="mt-10">
-            <div className="md:ml-10">
+        <div>
+             <div className="md:ml-10">
                 <ServiceProvider location={location} providerImage={providerImage} providerName={providerName}></ServiceProvider>
             </div>
 
@@ -84,4 +84,4 @@ const SingleService = () => {
     );
 };
 
-export default SingleService;
+export default Details;
