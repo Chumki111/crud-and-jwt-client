@@ -1,8 +1,8 @@
 import { Table } from "flowbite-react";
-
+import PropTypes from 'prop-types';
 
 const MyBooking = ({booking}) => {
-    const { serviceImage, serviceName, serviceDescription, providerImage, providerName, Price,date, location ,providerEmail,userEmail} = booking
+    const { serviceName,  Price,date, userEmail} = booking
     return (
         
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -17,5 +17,7 @@ const MyBooking = ({booking}) => {
         
     );
 };
-
+MyBooking.propTypes ={
+  booking:PropTypes.object
+}
 export default MyBooking;

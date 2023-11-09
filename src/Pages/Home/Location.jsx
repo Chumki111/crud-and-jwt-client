@@ -28,7 +28,7 @@ const Location = () => {
           statesData.features.map((state) => {
             const coordinates = state.geometry.coordinates[0].map((item) => [item[1], item[0]]);
   
-            return (<Polygon key={''}
+            return (<Polygon key={state.id}
               pathOptions={{
                 
                 fillOpacity: 0.7,

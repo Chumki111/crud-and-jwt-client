@@ -1,5 +1,5 @@
 import { Dropdown, Table } from "flowbite-react";
-
+import PropTypes from 'prop-types';
 const PendingWork = ({booking,handleCompleted}) => {
     const {_id,serviceName, Price,date, userEmail} = booking;
 
@@ -50,5 +50,10 @@ const PendingWork = ({booking,handleCompleted}) => {
         
     );
 };
-
+PendingWork.propTypes ={
+  booking:PropTypes.object
+}
+PendingWork.propTypes ={
+  handleCompleted:PropTypes.node
+}
 export default PendingWork;
