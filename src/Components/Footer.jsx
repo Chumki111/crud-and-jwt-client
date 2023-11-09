@@ -5,7 +5,7 @@ import img from '../assets/branding.avif'
 
 const Foot = () => {
     return (
-        <Footer container className='mt-6'>
+        <Footer container className='mt-16'>
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
